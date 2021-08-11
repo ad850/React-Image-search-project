@@ -2,31 +2,34 @@
   padding: 0px;
   margin: 0px;
 }
-
-#nav {
+@mixin flex {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 15em;
+}
+@mixin flexi {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3  em;
+}
+#nav {
+  @include flex;
   width: 99.9vw;
   height: 15vh;
   border: 1px solid black;
   background-color: black;
 }
-
 .One {
   color: white;
   text-decoration: none;
   font-size: 30px;
 }
-
 #se {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 3 em;
+  @include flexi();
   position: relative;
   top: 50px;
   box-sizing: border-box;
@@ -34,9 +37,5 @@
 }
 
 #contain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 15em;
-}/*# sourceMappingURL=Index.css.map */
+  @include flex();
+}
